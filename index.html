@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>你的名字 · 个人主页</title>
+  <title>周沁研 · 个人主页</title>
   <meta name="description" content="你的个人简介、项目与联系方式" />
-  <meta property="og:title" content="你的名字 · 个人主页" />
+  <meta property="og:title" content="周沁研 · 个人主页" />
   <meta property="og:description" content="你的个人简介、项目与联系方式" />
   <meta property="og:type" content="website" />
   <meta name="color-scheme" content="light dark">
@@ -74,7 +74,7 @@
   <header>
     <div class="container">
       <nav>
-        <div class="brand"><span class="dot"></span> <span>你的名字</span></div>
+        <div class="brand"><span class="dot"></span> <span>周沁研</span></div>
         <div class="links">
           <a class="btn" href="#about">关于我</a>
           <a class="btn" href="#projects">项目</a>
@@ -89,12 +89,11 @@
     <section class="hero">
       <div>
         <span class="tag">欢迎来到我的网站</span>
-        <h1>你好，我是<span style="background:linear-gradient(135deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent">你的名字</span>。</h1>
-        <p>一句话介绍你自己：例如「计算机系学生 / 前端爱好者 / 关注人机交互」。在这里你可以看到我的项目、经历和联系信息。</p>
+        <h1>你好，我是<span style="background:linear-gradient(135deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent">周沁研</span>。</h1>
+        <p>东南大学 <strong>人工智能学院</strong> 本科三年级，均绩 <strong>92.71/100</strong>、GPA <strong>4.32/4.80</strong>，年级排名 <strong>2/129</strong>。关注多智能体与大模型应用、数据挖掘与系统化工程落地。</p>
         <div style="display:flex; gap:10px; margin-top:18px">
           <a class="btn" href="#projects">查看项目 →</a>
-          <a class="btn" href="https://github.com/你的GitHub用户名" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/你的LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#awards">荣誉奖项</a>
         </div>
       </div>
       <div>
@@ -106,40 +105,45 @@
 
     <section id="about">
       <h2>关于我</h2>
-      <p class="muted">用 3~5 句话介绍你目前的身份、兴趣方向与擅长技术。可以写上获奖经历、比赛、实习或研究领域。</p>
+      <p class="muted">东南大学人工智能学院本科三年级，热衷于把大模型、多智能体与数据驱动方法应用到真实问题中。</p>
       <div class="card">
         <ul style="margin:0; padding-left:18px; line-height:1.9">
-          <li>专业 / 学校：例如「××大学 · 计算机科学与技术」</li>
-          <li>技能栈：HTML、CSS、JavaScript、Python、C++、Linux、Git</li>
-          <li>研究/兴趣：信息检索、可视化、LLM 应用、HCI</li>
-          <li>正在做：例如「个人知识库、课程可视化、开源小工具」</li>
+          <li>学校 / 专业：东南大学 · 人工智能学院（本科三年级）</li>
+          <li>成绩：首修GPA 4.32/4.80；首修均分 92.71/100；年级排名 2/129</li>
+          <li>英语：CET-4 613；CET-6 580</li>
+          <li>校园职务：东南大学学生科学技术协会新宣部主席；581232班学习委员</li>
+          <li>方向：大模型与多智能体、数据挖掘、信息检索、系统设计</li>
         </ul>
       </div>
     </section>
 
     <section id="projects">
       <h2>项目</h2>
-      <p class="muted">挑 3~6 个最能代表你的项目，给一句话亮点与技术标签。</p>
+      <p class="muted">选择具有代表性的项目，突出我的角色与价值。</p>
       <div class="grid">
         <article class="card project">
+          <h3>🤝 群智联枢：多智能体架构 AI 助手（负责人）</h3>
+          <p>面向复杂交互场景的多智能体协作与编排，支撑任务分解、工具调用与记忆管理。</p>
+          <div class="pill"><span>LLM</span><span>Multi-Agent</span><span>Orchestration</span></div>
+          <a class="btn" href="#" target="_blank" rel="noopener">概览</a>
+        </article>
+        <article class="card project">
+          <h3>🧬 基于大模型的抗菌肽序列进化优化（SRTP 负责人）</h3>
+          <p>在校级 SRTP 项目中，探索以生成式大模型 + 进化策略搜索优化生物序列特性。</p>
+          <div class="pill"><span>Generative AI</span><span>Evolution</span><span>Bio</span></div>
+          <a class="btn" href="#" target="_blank" rel="noopener">摘要</a>
+        </article>
+        <article class="card project">
+          <h3>📈 基于 GP-LPO 的多因子选股模型（参与）</h3>
+          <p>结合高斯过程与样本外验证策略，构建多因子选股与回测框架。</p>
+          <div class="pill"><span>GP</span><span>Quant</span><span>Backtest</span></div>
+          <a class="btn" href="#" target="_blank" rel="noopener">报告</a>
+        </article>
+        <article class="card project">
           <h3>🎬 电影元数据真值发现（多模型集成）</h3>
-          <p>基于多模型集成的真值发现算法，完整工程化落地，显著提升元数据一致性。</p>
-          <div class="pill">
-            <span>Python</span><span>数据挖掘</span><span>集成学习</span>
-          </div>
-          <a class="btn" href="https://github.com/你的GitHub用户名/your-repo" target="_blank" rel="noopener">源码</a>
-        </article>
-        <article class="card project">
-          <h3>🧭 个人知识库可视化</h3>
-          <p>将笔记图谱化展示，支持全文搜索与关系跳转。</p>
-          <div class="pill"><span>TypeScript</span><span>D3.js</span><span>Graph</span></div>
-          <a class="btn" href="#">在线预览</a>
-        </article>
-        <article class="card project">
-          <h3>📚 课程项目：系统设计笔记</h3>
-          <p>对常见系统设计题目的要点梳理与示例实现。</p>
-          <div class="pill"><span>Go</span><span>Distributed</span><span>Notes</span></div>
-          <a class="btn" href="#">文档</a>
+          <p>面向多源异构数据的真值发现算法，完整工程化落地，提升元数据一致性与鲁棒性。</p>
+          <div class="pill"><span>Python</span><span>数据挖掘</span><span>集成学习</span></div>
+          <a class="btn" href="#" target="_blank" rel="noopener">源码</a>
         </article>
       </div>
     </section>
@@ -148,33 +152,31 @@
       <h2>联系我</h2>
       <p class="muted">欢迎通过邮箱或社交平台联系我，交流项目或合作机会。</p>
       <div class="card" style="display:flex; flex-wrap:wrap; gap:12px">
-        <a class="btn" href="mailto:you@example.com">📮 you@example.com</a>
+        <a class="btn" href="mailto:213231097@seu.edu.com">📮 you@example.com</a>
         <a class="btn" href="https://t.me/你的Telegram" target="_blank" rel="noopener">Telegram</a>
         <a class="btn" href="https://weibo.com/你的微博" target="_blank" rel="noopener">微博</a>
       </div>
     </section>
 
-    <section>
-      <h2>最近的写作</h2>
-      <p class="muted">如果你写博客，可以把最新文章的链接放在这里。</p>
-      <div class="grid">
-        <div class="card project">
-          <h3><a href="#" target="_blank" rel="noopener">如何从零上线个人网站</a></h3>
-          <p>覆盖域名、DNS、托管平台、HTTPS 的一站式指南。</p>
-        </div>
-        <div class="card project">
-          <h3><a href="#" target="_blank" rel="noopener">我的 2025 年目标</a></h3>
-          <p>记录年度学习和项目规划。</p>
-        </div>
-        <div class="card project">
-          <h3><a href="#" target="_blank" rel="noopener">读书笔记：XXX</a></h3>
-          <p>关键观点与摘录。</p>
-        </div>
+    <section id="awards">
+      <h2>荣誉与奖项</h2>
+      <p class="muted">部分代表性获奖：</p>
+      <div class="card" style="line-height:1.9">
+        <ul style="margin:0; padding-left:18px">
+          <li>国家奖学金（2023–2024）</li>
+          <li>东南大学“三好学生”（2023–2024）</li>
+          <li>江苏省普通高等学校第二十一届高等数学竞赛本科一级A 一等奖；第二十二届本科一级A 二等奖</li>
+          <li>全国大学生数学竞赛 江苏赛区非数学A类 国家二等奖</li>
+          <li>全国大学生英语竞赛 国家三等奖</li>
+          <li>东南大学本科生物理实验研究论文竞赛 一等奖</li>
+          <li>东南大学本科生第十八届数学建模竞赛 二等奖</li>
+          <li>蓝桥杯（江苏赛区）三等奖</li>
+        </ul>
       </div>
     </section>
 
     <div class="footer">
-      <span>© <span id="y"></span> 你的名字 · 保留所有权利</span>
+      <span>© <span id="y"></span> 周沁研 · 保留所有权利</span>
       <div style="display:flex; gap:10px">
         <a href="#">RSS</a>
         <a href="/sitemap.xml">Sitemap</a>
