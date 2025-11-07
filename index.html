@@ -1,193 +1,39 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>周沁研 · 个人主页</title>
-  <meta name="description" content="你的个人简介、项目与联系方式" />
-  <meta property="og:title" content="周沁研 · 个人主页" />
-  <meta property="og:description" content="你的个人简介、项目与联系方式" />
-  <meta property="og:type" content="website" />
-  <meta name="color-scheme" content="light dark">
-  <style>
-    :root{
-      --bg: #0b0c10;
-      --card:#111217;
-      --text:#e8e8ea;
-      --muted:#a5a7b0;
-      --accent:#6ee7ff;
-      --accent-2:#a78bfa;
-      --ring: #2b2f3a;
-    }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg: #f7f7fb;
-        --card:#ffffff;
-        --text:#17181c;
-        --muted:#5b5f6d;
-        --accent:#0ea5e9;
-        --accent-2:#7c3aed;
-        --ring:#e9e9f2;
-      }
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;scroll-behavior:smooth}
-    body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--text);}
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1000px; margin:0 auto; padding:24px}
-    header{position:sticky; top:0; backdrop-filter:saturate(1.2) blur(8px); background:color-mix(in lch, var(--bg) 80%, black 0%); border-bottom:1px solid var(--ring); z-index:50}
-    nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
-    .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
-    .links{display:flex; gap:16px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:1px solid var(--ring); border-radius:14px; background:var(--card); color:var(--text)}
-    .btn:hover{transform:translateY(-1px)}
+---
+layout: default
+title : Homepage
+navbar_title: Home
+---
 
-    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; padding:56px 0}
-    .hero h1{font-size:clamp(28px, 5vw, 56px); line-height:1.05; margin:.2em 0}
-    .hero p{color:var(--muted); font-size:clamp(16px,2.4vw,18px)}
-    .tag{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--ring); border-radius:999px; color:var(--muted); font-size:14px}
-    .card{background:var(--card); border:1px solid var(--ring); border-radius:18px; padding:18px}
-    .avatar{aspect-ratio:1/1; width:100%; border-radius:18px; background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); display:grid; place-items:center; font-weight:800; font-size:42px; color:#111}
-
-    section{padding:32px 0}
-    h2{font-size:26px; margin:0 0 8px 0}
-    .muted{color:var(--muted); margin:0 0 18px 0}
-
-    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
-    .project{display:flex; flex-direction:column; gap:10px}
-    .project h3{margin:0; font-size:18px}
-    .project p{margin:0; color:var(--muted); font-size:14px}
-    .pill{display:inline-flex; gap:8px; flex-wrap:wrap}
-    .pill span{font-size:12px; padding:6px 10px; border:1px solid var(--ring); border-radius:999px; color:var(--muted)}
-
-    .footer{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding:28px 0; border-top:1px solid var(--ring); margin-top:18px; color:var(--muted); font-size:14px}
-
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .grid{grid-template-columns:1fr;}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand"><span class="dot"></span> <span>周沁研</span></div>
-        <div class="links">
-          <a class="btn" href="#about">关于我</a>
-          <a class="btn" href="#projects">项目</a>
-          <a class="btn" href="#contact">联系</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">简历</a>
-        </div>
-      </nav>
+<div class="row">
+    <div class="col-lg-3 col-md-4">
+        {% include widgets/profile_card_mini.html %}
     </div>
-  </header>
+    <div class="col-lg-9 col-md-8">
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <span class="tag">欢迎来到我的网站</span>
-        <h1>你好，我是<span style="background:linear-gradient(135deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent">周沁研</span>。</h1>
-        <p>东南大学 <strong>人工智能学院</strong> 本科三年级，均绩 <strong>92.71/100</strong>、GPA <strong>4.32/4.80</strong>，年级排名 <strong>2/129</strong>。关注多智能体与大模型应用、数据挖掘与系统化工程落地。</p>
-        <div style="display:flex; gap:10px; margin-top:18px">
-          <a class="btn" href="#projects">查看项目 →</a>
-          <a class="btn" href="#awards">荣誉奖项</a>
-        </div>
-      </div>
-      <div>
-        <div class="card">
-          <div class="avatar" aria-label="头像">你</div>
-        </div>
-      </div>
-    </section>
+        {% include widgets/profile_card_bio_only.html %}
 
-    <section id="about">
-      <h2>关于我</h2>
-      <p class="muted">东南大学人工智能学院本科三年级，热衷于把大模型、多智能体与数据驱动方法应用到真实问题中。</p>
-      <div class="card">
-        <ul style="margin:0; padding-left:18px; line-height:1.9">
-          <li>学校 / 专业：东南大学 · 人工智能学院（本科三年级）</li>
-          <li>成绩：首修GPA 4.32/4.80；首修均分 92.71/100；年级排名 2/129</li>
-          <li>英语：CET-4 613；CET-6 580</li>
-          <li>校园职务：东南大学学生科学技术协会新宣部主席；581232班学习委员</li>
-          <li>方向：大模型与多智能体、数据挖掘、信息检索、系统设计</li>
-        </ul>
-      </div>
-    </section>
+        <!-- Debugging widgets -->
+        {% include widgets/debug_repo_name.html %}
+        {% include widgets/debug_url.html %}
 
-    <section id="projects">
-      <h2>项目</h2>
-      <p class="muted">选择具有代表性的项目，突出我的角色与价值。</p>
-      <div class="grid">
-        <article class="card project">
-          <h3>🤝 群智联枢：多智能体架构 AI 助手（负责人）</h3>
-          <p>面向复杂交互场景的多智能体协作与编排，支撑任务分解、工具调用与记忆管理。</p>
-          <div class="pill"><span>LLM</span><span>Multi-Agent</span><span>Orchestration</span></div>
-          <a class="btn" href="#" target="_blank" rel="noopener">概览</a>
-        </article>
-        <article class="card project">
-          <h3>🧬 基于大模型的抗菌肽序列进化优化（SRTP 负责人）</h3>
-          <p>在校级 SRTP 项目中，探索以生成式大模型 + 进化策略搜索优化生物序列特性。</p>
-          <div class="pill"><span>Generative AI</span><span>Evolution</span><span>Bio</span></div>
-          <a class="btn" href="#" target="_blank" rel="noopener">摘要</a>
-        </article>
-        <article class="card project">
-          <h3>📈 基于 GP-LPO 的多因子选股模型（参与）</h3>
-          <p>结合高斯过程与样本外验证策略，构建多因子选股与回测框架。</p>
-          <div class="pill"><span>GP</span><span>Quant</span><span>Backtest</span></div>
-          <a class="btn" href="#" target="_blank" rel="noopener">报告</a>
-        </article>
-        <article class="card project">
-          <h3>🎬 电影元数据真值发现（多模型集成）</h3>
-          <p>面向多源异构数据的真值发现算法，完整工程化落地，提升元数据一致性与鲁棒性。</p>
-          <div class="pill"><span>Python</span><span>数据挖掘</span><span>集成学习</span></div>
-          <a class="btn" href="#" target="_blank" rel="noopener">源码</a>
-        </article>
-      </div>
-    </section>
+        {% if site.data.display.homepage.show_experience %}
+            {% include widgets/experience_card.html %}
+        {% endif %}
 
-    <section id="contact">
-      <h2>联系我</h2>
-      <p class="muted">欢迎通过邮箱或社交平台联系我，交流项目或合作机会。</p>
-      <div class="card" style="display:flex; flex-wrap:wrap; gap:12px">
-        <a class="btn" href="mailto:213231097@seu.edu.com">📮 you@example.com</a>
-        <a class="btn" href="https://t.me/你的Telegram" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn" href="https://weibo.com/你的微博" target="_blank" rel="noopener">微博</a>
-      </div>
-    </section>
+        {% if site.data.display.homepage.show_news %}
+        {% assign count_news = site.news | size %}
+        {% if count_news > 0 %}
+        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+        {% endif %}
+        {% endif %}
 
-    <section id="awards">
-      <h2>荣誉与奖项</h2>
-      <p class="muted">部分代表性获奖：</p>
-      <div class="card" style="line-height:1.9">
-        <ul style="margin:0; padding-left:18px">
-          <li>国家奖学金（2023–2024）</li>
-          <li>东南大学“三好学生”（2023–2024）</li>
-          <li>江苏省普通高等学校第二十一届高等数学竞赛本科一级A 一等奖；第二十二届本科一级A 二等奖</li>
-          <li>全国大学生数学竞赛 江苏赛区非数学A类 国家二等奖</li>
-          <li>全国大学生英语竞赛 国家三等奖</li>
-          <li>东南大学本科生物理实验研究论文竞赛 一等奖</li>
-          <li>东南大学本科生第十八届数学建模竞赛 二等奖</li>
-          <li>蓝桥杯（江苏赛区）三等奖</li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="footer">
-      <span>© <span id="y"></span> 周沁研 · 保留所有权利</span>
-      <div style="display:flex; gap:10px">
-        <a href="#">RSS</a>
-        <a href="/sitemap.xml">Sitemap</a>
-        <a href="#top" aria-label="回到顶部">回到顶部 ↑</a>
-      </div>
+        {% if site.data.display.homepage.show_selected_publications %}
+        {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
+        {%
+        include widgets/publication_card.html
+        publications=pubs
+        title='<i class="fas fa-star"></i> Selected Publications'
+        %}
+        {% endif %}
     </div>
-  </main>
-
-  <script>
-    // 年份
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+</div>
