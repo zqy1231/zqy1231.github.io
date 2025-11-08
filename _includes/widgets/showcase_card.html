@@ -1,0 +1,44 @@
+<div class="my-3 p-0 bg-white shadow-sm rounded-xl showcase-card">
+  <h6 class="border-bottom border-gray p-3 mb-0">
+    <i class="fas fa-images"></i> Showcase
+  </h6>
+  <div class="p-3">
+    <style>
+    /* Scoped styles for showcase button (matching resume style) */
+    .showcase-card .fancy-btn {
+      outline: none;
+      cursor: pointer;
+      border: none;
+      padding: 0.7rem 1.4rem;
+      margin: 0;
+      font-family: inherit;
+      position: relative;
+      display: inline-block;
+      letter-spacing: 0.05rem;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 500px;
+      overflow: hidden;
+      background: #66ff66;
+      color: ghostwhite;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .showcase-card .fancy-btn span { position: relative; z-index: 10; transition: color 0.4s; }
+    .showcase-card .fancy-btn:hover span { color: black; }
+    .showcase-card .fancy-btn::before {
+      position: absolute; top: 0; left: -10%; width: 120%; height: 100%; content: ""; z-index: 0;
+      background: #000; transform: skew(30deg); transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+    .showcase-card .fancy-btn:hover::before { transform: translate3d(100%, 0, 0); }
+    .showcase-card p.mb-2 { font-size: 0.95rem; margin-bottom: 0.6rem !important; }
+    </style>
+    <p class="mb-2">查看我精选的作品与展示。</p>
+    <a class="fancy-btn" href="{{ '/showcase.html' | relative_url }}" role="button" aria-label="View Showcase">
+      <span><i class="fas fa-arrow-right"></i> 前往 Showcase</span>
+    </a>
+  </div>
+  
+</div>
+
