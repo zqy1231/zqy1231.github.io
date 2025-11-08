@@ -44,6 +44,7 @@
             }
             .glass-radio-group label:hover { color: #fff; }
             .glass-radio-group input:checked + label { color: #fff; }
+            .glass-radio-group label.is-active { color: #fff; }
             .glass-radio-group .glass-glider {
               position: absolute;
               top: 0; bottom: 0;
@@ -61,12 +62,11 @@
             </style>
 
             <div class="glass-radio-group" id="glass-nav" style="--count: {{ site.data.navigation.pages | size }}">
-              {% assign current_index = 0 %}
               {% for item in site.data.navigation.pages %}
                 {% assign is_active = item.name == page.navbar_title %}
                 {% if is_active %}{% assign current_index = forloop.index0 %}{% endif %}
-                <input type="radio" name="glass-nav" id="glass-{{ forloop.index }}" {% if is_active %}checked{% endif %}>
-                <label for="glass-{{ forloop.index }}" data-href="{{ item.url | relative_url }}">{{ item.name }}</label>
+                <input type="radio" name="glass-nav" id="glass-{{ forloop.index }}">
+                <label for="glass-{{ forloop.index }}" data-href="{{ item.url | relative_url }}" class="{% if is_active %}is-active{% endif %}">{{ item.name }}</label>
               {% endfor %}
               <div class="glass-glider" role="presentation"></div>
             </div>
@@ -84,14 +84,16 @@
                 var pct = 100 * idx;
                 glider.style.transform = 'translateX(' + pct + '%)';
               }
-              // initialize position to checked input
+              // initialize position from data-active-index (Liquid computed)
               var initIdx = 0;
-              inputs.forEach(function(input, i){ if(input.checked) initIdx = i; });
+              labels.forEach(function(l, i){ if(l.classList.contains('is-active')) initIdx = i; });
               setPos(initIdx);
               // wire click: move + navigate
               labels.forEach(function(label, i){
                 label.addEventListener('click', function(e){
                   setPos(i);
+                  labels.forEach(function(l){ l.classList.remove('is-active'); });
+                  label.classList.add('is-active');
                   var href = this.getAttribute('data-href');
                   if(href){ window.location = href; }
                 });
