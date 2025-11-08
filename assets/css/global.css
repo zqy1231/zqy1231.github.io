@@ -43,7 +43,16 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .navbar {
-    opacity: 0.95;
+    opacity: 1;
+}
+
+/* Frosted glass navbar */
+.navbar-glass {
+    /* Bootstrap dark base color (#212529) with translucency */
+    background-color: rgba(33, 37, 41, 0.55);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .inline-badge {
@@ -89,4 +98,3 @@ div.lazy {
 .email-text {
     font-family: Source Code Pro, monospace;
 }
-
