@@ -6,12 +6,71 @@
         <i class="fas fa-file-alt"></i> Resume
     </h6>
     <div class="p-3">
+        <style>
+        /* Scoped styles for resume download buttons */
+        .resume-card .fancy-btn {
+          outline: none;
+          cursor: pointer;
+          border: none;
+          padding: 0.9rem 2rem;
+          margin: 0;
+          font-family: inherit;
+          position: relative;
+          display: inline-block;
+          letter-spacing: 0.05rem;
+          font-weight: 700;
+          font-size: 17px;
+          border-radius: 500px;
+          overflow: hidden;
+          background: #66ff66;
+          color: ghostwhite;
+          text-decoration: none;
+          line-height: 1;
+        }
+
+        .resume-card .fancy-btn + .fancy-btn {
+          margin-left: 0.75rem;
+        }
+
+        .resume-card .fancy-btn span {
+          position: relative;
+          z-index: 10;
+          transition: color 0.4s;
+        }
+
+        .resume-card .fancy-btn:hover span {
+          color: black;
+        }
+
+        .resume-card .fancy-btn::before,
+        .resume-card .fancy-btn::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          content: "";
+        }
+
+        .resume-card .fancy-btn::before {
+          background: #000;
+          width: 120%;
+          left: -10%;
+          transform: skew(30deg);
+          transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+        }
+
+        .resume-card .fancy-btn:hover::before {
+          transform: translate3d(100%, 0, 0);
+        }
+        </style>
         <p class="mb-2">Download or view the latest resume.</p>
-        <a class="btn btn-sm btn-primary mr-2" href="{{ resume_href_en | relative_url }}" target="_blank">
-            <i class="fas fa-download"></i> View PDF (English)
+        <a class="fancy-btn" href="{{ resume_href_en | relative_url }}" target="_blank" role="button" aria-label="View English Resume">
+            <span><i class="fas fa-download"></i> View English Resume</span>
         </a>
-        <a class="btn btn-sm btn-outline-primary" href="{{ resume_href_zh | relative_url }}" target="_blank">
-            <i class="fas fa-download"></i> 查看 PDF（中文）
+        <a class="fancy-btn" href="{{ resume_href_zh | relative_url }}" target="_blank" role="button" aria-label="查看中文简历">
+            <span><i class="fas fa-download"></i> 查看中文简历</span>
         </a>
     </div>
 </div>
