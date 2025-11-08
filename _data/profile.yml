@@ -1,6 +1,6 @@
 primary_name: "周沁研"
 secondary_name: ""
-navbar_name: "周沁研"
+navbar_name: "Zhou"
 
 positions:
 - name: Title or Position
@@ -39,7 +39,7 @@ education:
 - name: 东南大学 Southeast University
   logo: /assets/images/badges/seu.png
   position: >- 
-     人工智能专业本科生 Bachelor of Engineering in Artificial Intelligence
+     人工智能专业本科生<br>Bachelor of Engineering in Artificial Intelligence
   date: Sep. 2023 - present
 
 
@@ -52,17 +52,17 @@ education:
 
 awards:
   - name: | 
-      本科生国家奖学金  
+      本科生国家奖学金<br>
       National Scholarship for Undergraduate Students
     date: 2024
 
   - name: |
-      东南大学校长奖学金  
+      东南大学校长奖学金<br>
       President Scholarship of Southeast University
     date: 2025
 
   - name: |
-      2025年度挑战杯中国青年科技创新“揭榜挂帅”擂台赛全国二等奖  
+      2025年度挑战杯中国青年科技创新“揭榜挂帅”擂台赛全国二等奖<br>
       "Challenge Cup" National College Student Curricular Academic Science and Technology Works Competition – National Second Prize
     date: 2025
 
