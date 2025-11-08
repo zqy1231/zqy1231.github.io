@@ -10,6 +10,8 @@ positions:
 
 email: "213231097@seu.edu.cn"
 # cv_link: link-to-your-cv-file
+cv_link_en: /resume_en.pdf  # English CV PDF (optional)
+cv_link_zh: /resume_zh.pdf  # 中文简历 PDF（可选）
 gscholar:   # This is an example, replace it with your own Google Scholar ID
 github: zqy1231
 twitter:   # Do not include the '@' symbol
@@ -60,4 +62,3 @@ awards:
       2025年度挑战杯中国青年科技创新“揭榜挂帅”擂台赛全国二等奖<br>
       "Challenge Cup" National College Student Curricular Academic Science and Technology Works Competition – National Second Prize
     date: 2025
-
