@@ -6,13 +6,98 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                {% for item in site.data.navigation.pages %}
-                <li class="nav-item {% if item.name == page.navbar_title %}active{% endif %}">
-                    <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.name }}</a>
-                </li>
-                {% endfor %}
-            </ul>
+            <style>
+            .glass-radio-group {
+              --bg: rgba(255, 255, 255, 0.06);
+              --text: #e5e5e5;
+              display: flex;
+              position: relative;
+              background: var(--bg);
+              border-radius: 1rem;
+              backdrop-filter: blur(12px);
+              -webkit-backdrop-filter: blur(12px);
+              box-shadow:
+                inset 1px 1px 4px rgba(255, 255, 255, 0.2),
+                inset -1px -1px 6px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.15);
+              overflow: hidden;
+              width: fit-content;
+              margin-left: auto;
+            }
+            .glass-radio-group input { display: none; }
+            .glass-radio-group label {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 80px;
+              font-size: 14px;
+              padding: 0.6rem 1.2rem;
+              cursor: pointer;
+              font-weight: 600;
+              letter-spacing: 0.3px;
+              color: var(--text);
+              position: relative;
+              z-index: 2;
+              transition: color 0.3s ease-in-out;
+              white-space: nowrap;
+            }
+            .glass-radio-group label:hover { color: #fff; }
+            .glass-radio-group input:checked + label { color: #fff; }
+            .glass-radio-group .glass-glider {
+              position: absolute;
+              top: 0; bottom: 0;
+              width: calc(100% / var(--count, 3));
+              border-radius: 1rem;
+              z-index: 1;
+              transition: transform 0.4s cubic-bezier(0.37, 1.95, 0.66, 0.56),
+                          background 0.4s ease-in-out,
+                          box-shadow 0.4s ease-in-out;
+              background: linear-gradient(135deg, #c0c0c055, #e0e0e0);
+              box-shadow:
+                0 0 18px rgba(192, 192, 192, 0.35),
+                0 0 10px rgba(255, 255, 255, 0.25) inset;
+            }
+            </style>
+
+            <div class="glass-radio-group" id="glass-nav" style="--count: {{ site.data.navigation.pages | size }}">
+              {% assign current_index = 0 %}
+              {% for item in site.data.navigation.pages %}
+                {% assign is_active = item.name == page.navbar_title %}
+                {% if is_active %}{% assign current_index = forloop.index0 %}{% endif %}
+                <input type="radio" name="glass-nav" id="glass-{{ forloop.index }}" {% if is_active %}checked{% endif %}>
+                <label for="glass-{{ forloop.index }}" data-href="{{ item.url | relative_url }}">{{ item.name }}</label>
+              {% endfor %}
+              <div class="glass-glider" role="presentation"></div>
+            </div>
+
+            <script>
+            (function(){
+              var group = document.getElementById('glass-nav');
+              if(!group) return;
+              var inputs = group.querySelectorAll('input');
+              var labels = group.querySelectorAll('label');
+              var glider = group.querySelector('.glass-glider');
+              var count = labels.length || 1;
+              group.style.setProperty('--count', count);
+              function setPos(idx){
+                var pct = 100 * idx;
+                glider.style.transform = 'translateX(' + pct + '%)';
+              }
+              // initialize position to checked input
+              var initIdx = 0;
+              inputs.forEach(function(input, i){ if(input.checked) initIdx = i; });
+              setPos(initIdx);
+              // wire click: move + navigate
+              labels.forEach(function(label, i){
+                label.addEventListener('click', function(e){
+                  setPos(i);
+                  var href = this.getAttribute('data-href');
+                  if(href){ window.location = href; }
+                });
+              });
+            })();
+            </script>
         </div>
     </div>
 </nav>
