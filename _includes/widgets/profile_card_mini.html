@@ -67,6 +67,17 @@
                         </a>
                         {% endif %}
 
+                        {% if site.data.profile.qq_qrcode or site.data.profile.qq %}
+                        <a class="px-1 no-break"
+                           {% if site.data.profile.qq_qrcode %}
+                           data-toggle="modal" data-target="#modal-qq"
+                           {% else %}
+                           target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin={{ site.data.profile.qq }}&site=qq&menu=yes"
+                           {% endif %}>
+                            <i class="fab fa-qq"></i>
+                        </a>
+                        {% endif %}
+
                         {% if site.data.profile.twitter %}
                         <a class="px-1 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
                             <i class="fab fa-twitter"></i>
@@ -110,4 +121,19 @@
         </div>
     </div>
 </div>
+{% endif %}
+
+{% if site.data.profile.qq_qrcode %}
+<div class="modal fade" id="modal-qq" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center p-3">
+        <img src="{{ site.data.profile.qq_qrcode | relative_url }}" class="img-fluid">
+        {% if site.data.profile.qq %}
+        <div class="small text-muted mt-2">QQ: {{ site.data.profile.qq }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  </div>
 {% endif %}
