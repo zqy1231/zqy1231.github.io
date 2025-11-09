@@ -122,10 +122,43 @@ container_class: container-xl
 
 <div class="aurora-bg" aria-hidden="true"></div>
 
+<style>
+/* Glass card style for About boxes only */
+.glass-card {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  min-height: clamp(180px, 24vw, 280px);
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.5s, border-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+}
+
+.glass-card:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.glass-card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+</style>
+
 {% assign cards_by_group = site.showcase | sort: "date" | reverse | where: "show", true | group_by_exp: "item", "item.group" %}
 
 {% for group in cards_by_group %}
-<h1>{{ group.name }}</h1>
+<h1 style="color:#ffffff">{{ group.name }}</h1>
 <div class="row grid mb-4">
     <div class="grid-sizer col-1"></div>
     {% for item in group.items %}
