@@ -53,8 +53,9 @@
                     <div class="col-lg-6 awards-section">
                         <div class="mx-2 my-1">
                             <h6>Honors & Awards</h6>
+                            {% assign homepage_awards = site.data.profile.awards | where_exp: "a", "a.homepage != false" %}
                             <ul class="list small pl-3 mb-1">
-                                {% for item in site.data.profile.awards %}
+                                {% for item in homepage_awards %}
                                 <li>
                                     <div class="d-flex">
                                         <div>{{ item.name }}</div>

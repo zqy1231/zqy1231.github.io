@@ -69,3 +69,33 @@ awards:
       2025年度“挑战杯”中国青年科技创新揭榜挂帅擂台赛全国二等奖<br>
       "Challenge Cup" National College Student Curricular Academic Science and Technology Works Competition – National Second Prize
     date: 2025
+
+  - name: |
+      2023-2024学年东南大学“三好学生”<br>
+      Merit Student of Southeast University, 2023
+    date: 2023
+    homepage: false
+
+  - name: |
+      江苏省普通高等学校第二十一届高等数学竞赛本科一级A一等奖<br>
+      First Prize (Category A) in the 21st Jiangsu Provincial Mathematics Competition of Chinese College Students
+    date: 2023
+    homepage: false
+
+  - name: |
+      第十六届全国大学生数学竞赛江苏赛区非数学A类国家二等奖<br>
+      Second Prize (Non-Mathematics Category A) in the 16th Mathematics Competition of Chinese College Students (Jiangsu Division)
+    date: 2024
+    homepage: false
+
+  - name: |
+      全国大学生英语竞赛国家三等奖<br>
+      Third Prize in the National English Competition for College Students
+    date: 2023
+    homepage: false
+
+  - name: |
+      2025年中国大学生数学建模竞赛省级一等奖<br>
+      Provincial First Prize in the China Undergraduate Mathematical Contest in Modeling (CUMCM)
+    date: 2025
+    homepage: false

@@ -15,8 +15,9 @@ navbar_title: Awards
           <div class="card-body p-4">
             <h5 class="mb-3">Honors & Awards</h5>
             {% if site.data.profile.awards %}
+            {% assign awards_sorted = site.data.profile.awards | sort: 'date' | reverse %}
             <ul class="list-unstyled mb-0">
-              {% for item in site.data.profile.awards %}
+              {% for item in awards_sorted %}
               <li class="media mb-3">
                 <div class="media-body">
                   <div class="d-flex">
@@ -37,4 +38,3 @@ navbar_title: Awards
   </div>
   
 </div>
-
