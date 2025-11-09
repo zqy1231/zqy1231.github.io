@@ -6,10 +6,9 @@ container_class: container-xl
 ---
 
 <style>
-.container {
-  position: absolute;
-  top: 0;
-  left: 0;
+.aurora-bg {
+  position: fixed;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: radial-gradient(
@@ -32,9 +31,10 @@ container_class: container-xl
   overflow: hidden;
   animation: aurora-drift 25s infinite alternate ease-in-out;
   z-index: -1;
+  pointer-events: none;
 }
 
-.container::before {
+.aurora-bg::before {
   content: "";
   position: absolute;
   width: 200%;
@@ -58,7 +58,7 @@ container_class: container-xl
   animation: grid-shift 20s linear infinite;
 }
 
-.container::after {
+.aurora-bg::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -120,7 +120,7 @@ container_class: container-xl
 }
 </style>
 
-<div class="container" aria-hidden="true"></div>
+<div class="aurora-bg" aria-hidden="true"></div>
 
 {% assign cards_by_group = site.showcase | sort: "date" | reverse | where: "show", true | group_by_exp: "item", "item.group" %}
 
