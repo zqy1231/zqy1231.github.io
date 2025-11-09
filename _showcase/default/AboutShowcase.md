@@ -1,7 +1,9 @@
+---
 show: true
 width: 4
 date: 2025-01-12 00:02:00 +0800
 class: glass-card
+#group: About
 ---
 
 <div class="p-4">
